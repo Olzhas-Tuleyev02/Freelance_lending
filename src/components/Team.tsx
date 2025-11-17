@@ -4,9 +4,9 @@ import type { TeamMember } from '../types';
 
 const teamMembers: TeamMember[] = [
   { name: 'Тулеев Олжас', role: 'Главный преподаватель', experience: '10 лет в разработке', imageUrl: 'https://i.ibb.co/PGX7vYRj/Subtract.png' },
-  { name: 'Адлет Ким', role: 'Full-stack Разработчик', experience: '7 лет коммерческого опыта', imageUrl: 'https://i.ibb.co.com/gw11jd6/Generated-Image-November-17-2025-2-48-PM.png' },
+  { name: 'Адлет Ким', role: 'Full-stack Разработчик', experience: '7 лет коммерческого опыта', imageUrl: 'https://i.ibb.co.com/xZ6Gcgg/Generated-Image-November-17-2025-2-48-PM-1.png' },
   { name: 'Асель Райымкулова', role: 'UI/UX Дизайнер', experience: 'Эксперт по Figma и пользовательским интерфейсам', imageUrl: 'https://i.ibb.co.com/FbVYXrMm/Generated-Image-November-17-2025-2-34-PM-1.png' },
-  { name: 'Мария Кузнецова', role: 'Менеджер по работе с клиентами', experience: 'Поможет вам найти первый заказ', imageUrl: 'https://i.ibb.co.com/xZ6Gcgg/Generated-Image-November-17-2025-2-48-PM-1.png' },
+  { name: 'Мария Кузнецова', role: 'Менеджер по работе с клиентами', experience: 'Поможет вам найти первый заказ', imageUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200' },
 ];
 
 const TeamCard: React.FC<{ member: TeamMember }> = ({ member }) => (
