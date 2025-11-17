@@ -3,9 +3,9 @@ import React from 'react';
 import type { TeamMember } from '../types';
 
 const teamMembers: TeamMember[] = [
-  { name: 'Алексей Иванов', role: 'Главный преподаватель', experience: '10 лет в веб-разработке', imageUrl: 'https://images.unsplash.com/photo-1557862921-37829c790f19?ixlib=rb-4.0.3&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200' },
-  { name: 'Дмитрий Петров', role: 'Full-stack Разработчик', experience: '7 лет коммерческого опыта', imageUrl: 'https://images.unsplash.com/photo-1624561172888-ac93c696e10c?ixlib=rb-4.0.3&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200' },
-  { name: 'Елена Сидорова', role: 'UI/UX Дизайнер', experience: 'Эксперт по Figma и пользовательским интерфейсам', imageUrl: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200' },
+  { name: 'Тулеев Олжас', role: 'Главный преподаватель', experience: '10 лет в разработке', imageUrl: 'https://i.ibb.co/PGX7vYRj/Subtract.png' },
+  { name: 'Адлет Ким', role: 'Full-stack Разработчик', experience: '7 лет коммерческого опыта', imageUrl: 'https://images.unsplash.com/photo-1624561172888-ac93c696e10c?ixlib=rb-4.0.3&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200' },
+  { name: 'Асель Райымкулова', role: 'UI/UX Дизайнер', experience: 'Эксперт по Figma и пользовательским интерфейсам', imageUrl: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200' },
   { name: 'Мария Кузнецова', role: 'Менеджер по работе с клиентами', experience: 'Поможет вам найти первый заказ', imageUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200' },
 ];
 
