@@ -6,6 +6,7 @@ import About from './components/About';
 import VideoSection from './components/VideoSection';
 import WhatYouGet from './components/WhatYouGet';
 import Program from './components/Program';
+import StudentWorks from './components/StudentWorks';
 import Guarantee from './components/Guarantee';
 import Testimonials from './components/Testimonials';
 import Team from './components/Team';
@@ -23,6 +24,7 @@ const App: React.FC = () => {
         <VideoSection />
         <WhatYouGet />
         <Program />
+        <StudentWorks />
         <Guarantee />
         <Testimonials />
         <Team />
