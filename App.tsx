@@ -13,10 +13,11 @@ import Team from './components/Team';
 import FAQ from './components/FAQ';
 import EnrollForm from './components/EnrollForm';
 import Footer from './components/Footer';
+import StickyMobileCTA from './components/StickyMobileCTA';
 
 const App: React.FC = () => {
   return (
-    <div className="bg-gray-900 text-gray-200 font-sans leading-relaxed">
+    <div className="bg-gray-900 text-gray-200 font-sans leading-relaxed pb-16 md:pb-0">
       <Header />
       <main>
         <Hero />
@@ -32,6 +33,7 @@ const App: React.FC = () => {
         <EnrollForm />
       </main>
       <Footer />
+      <StickyMobileCTA />
     </div>
   );
 };

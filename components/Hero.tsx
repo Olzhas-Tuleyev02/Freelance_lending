@@ -9,7 +9,7 @@ const Hero: React.FC = () => {
         }
     };
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center bg-gray-900 overflow-hidden pt-20 pb-10">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center bg-gray-900 overflow-hidden pt-24 pb-10">
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-900 to-indigo-900/50 opacity-80"></div>
       <div className="absolute top-0 left-0 w-72 h-72 bg-purple-600 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-pulse"></div>
       <div className="absolute bottom-0 right-0 w-72 h-72 bg-indigo-600 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-pulse animation-delay-4000"></div>
@@ -29,13 +29,25 @@ const Hero: React.FC = () => {
              Освой дизайн, верстку и нейросети. Создай портфолио и заработай первые деньги <strong className="text-white">с гарантией результата</strong> или мы вернем вам 100% стоимости курса.
           </p>
           
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
               <button onClick={() => scrollTo('#enroll')} className="w-full sm:w-auto bg-indigo-600 text-white font-bold text-lg py-4 px-10 rounded-xl transition-all duration-300 transform hover:scale-105 hover:bg-indigo-700 shadow-xl shadow-indigo-600/30 ring-2 ring-indigo-500 ring-offset-2 ring-offset-gray-900">
                 Хочу на курс и первый заказ
               </button>
               <button onClick={() => scrollTo('#program')} className="w-full sm:w-auto bg-gray-800 text-gray-200 hover:text-white font-bold text-lg py-4 px-10 rounded-xl transition-all duration-300 hover:bg-gray-700 border border-gray-700">
                 Смотреть программу
               </button>
+          </div>
+
+          <div className="border-t border-gray-800 pt-8 max-w-4xl mx-auto">
+             <p className="text-gray-500 text-xs uppercase tracking-widest mb-4 font-bold">Инструменты, которыми вы овладеете</p>
+             <div className="flex flex-wrap justify-center items-center gap-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                 {/* Visual Logos using simple text/icons for robustness */}
+                 <div className="flex items-center gap-2"><div className="w-6 h-6 bg-[#F24E1E] rounded-full"></div><span className="font-bold text-gray-300">Figma</span></div>
+                 <div className="flex items-center gap-2"><div className="w-6 h-6 bg-[#000000] border border-gray-600 rounded-full"></div><span className="font-bold text-gray-300">Tilda</span></div>
+                 <div className="flex items-center gap-2"><div className="w-6 h-6 bg-[#61DAFB] rounded-full"></div><span className="font-bold text-gray-300">React</span></div>
+                 <div className="flex items-center gap-2"><div className="w-6 h-6 bg-[#74AA9C] rounded-full"></div><span className="font-bold text-gray-300">OpenAI</span></div>
+                 <div className="flex items-center gap-2"><div className="w-6 h-6 bg-[#3776AB] rounded-full"></div><span className="font-bold text-gray-300">Python</span></div>
+             </div>
           </div>
 
           <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4 text-gray-400 text-sm max-w-3xl mx-auto">
