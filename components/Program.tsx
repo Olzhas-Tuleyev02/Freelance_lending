@@ -59,8 +59,8 @@ const Program: React.FC = () => {
                 </div>
                 
                 <div className="text-center animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
-                    <button onClick={() => scrollTo('#enroll')} className="bg-transparent border-2 border-indigo-600 text-indigo-400 hover:bg-indigo-600 hover:text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105">
-                        Посмотреть полную программу
+                    <button onClick={() => scrollTo('#enroll')} className="bg-indigo-600 text-white hover:bg-indigo-700 font-bold py-4 px-10 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg animate-pulse-glow">
+                        Начать обучение и зарабатывать
                     </button>
                 </div>
             </div>

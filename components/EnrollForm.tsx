@@ -67,11 +67,20 @@ const EnrollForm: React.FC = () => {
                       </>
                   )}
               </button>
+
+              <div className="pt-4 border-t border-gray-700">
+                  <p className="text-gray-400 text-sm text-center mb-3">Доступна рассрочка:</p>
+                  <div className="flex justify-center space-x-4 items-center opacity-80 grayscale hover:grayscale-0 transition-all">
+                      <div className="bg-red-600 text-white text-xs font-bold px-2 py-1 rounded italic">Kaspi Red</div>
+                      <div className="bg-yellow-500 text-black text-xs font-bold px-2 py-1 rounded">0-0-12</div>
+                      <div className="bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded">Visa</div>
+                  </div>
+              </div>
               
-              <div className="text-center mt-4">
+              <div className="text-center mt-2">
                   <p className="text-xs text-gray-500 flex items-center justify-center">
                       <svg className="w-3 h-3 mr-1 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path></svg>
-                      Ваши данные под защитой. 100% гарантия возврата.
+                      Ваши данные под защитой.
                   </p>
               </div>
             </form>

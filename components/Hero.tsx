@@ -21,18 +21,18 @@ const Hero: React.FC = () => {
              <span className="text-sm text-gray-300 font-semibold">4.9/5 Средняя оценка выпускников</span>
           </div>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-4">
-            Стань <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-purple-500">Востребованным Фрилансером</span> за 30 Дней
+            Твоя <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-purple-500">Свобода и Доход</span><br />Начинаются Здесь
           </h1>
           <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-            Освойте создание сайтов, ботов и даже собственных нейросетей. <span className="text-white font-bold">Мы доведем вас до первого заказа</span>, или вернем полную стоимость обучения.
+             Хватит откладывать жизнь. Освой востребованную IT-профессию за 30 дней, создай портфолио и <span className="text-white font-bold">начни зарабатывать удаленно</span>, даже если начинаешь с полного нуля.
           </p>
           <button onClick={() => scrollTo('#enroll')} className="bg-indigo-600 text-white font-bold text-lg py-4 px-10 rounded-lg transition-all duration-300 transform hover:scale-110 hover:bg-indigo-700 shadow-lg animate-pulse-glow">
-            Хочу на курс и первый заказ
+            Получить план выхода на доход
           </button>
           <div className="mt-6 flex flex-col md:flex-row items-center justify-center space-y-2 md:space-y-0 md:space-x-6 text-gray-400 text-sm">
             <div className="flex items-center">
                 <svg className="w-5 h-5 text-green-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 20.944a11.955 11.955 0 018.618-3.04 11.955 11.955 0 018.618 3.04 12.02 12.02 0 00-3-9.932z"></path></svg>
-                <span>Гарантия возврата средств</span>
+                <span>Гарантия первого заказа или возврат</span>
             </div>
             <div className="flex items-center">
                  <svg className="w-5 h-5 text-indigo-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
