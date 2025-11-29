@@ -4,4 +4,9 @@ export interface TeamMember {
   role: string;
   experience: string;
   imageUrl: string;
+  socialLinks?: {
+    instagram?: string;
+    linkedin?: string;
+    telegram?: string;
+  };
 }
