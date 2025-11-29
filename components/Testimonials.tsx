@@ -1,52 +1,119 @@
 
-import React from 'react';
+import React, { useRef } from 'react';
 
 const testimonials = [
   {
-    name: 'Алина С.',
-    role: 'Студентка, 21 год',
-    before: 'Стипендия 35к, полная зависимость от родителей. Страх, что после универа не найдет работу.',
-    after: 'Заработала 150,000 ₸ за первый месяц фриланса. Купила новый ноутбук и оплачивает квартиру сама.',
-    result: '150,000 ₸',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
+    name: 'Айжан С.',
+    role: 'Студентка, 20 лет',
+    before: 'Жила на стипендию, просила деньги у родителей на кафе.',
+    after: 'Заработала 180,000 ₸ за первый месяц на дизайне презентаций.',
+    result: '180,000 ₸',
+    image: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
   },
   {
-    name: 'Тимур К.',
-    role: 'Офисный сотрудник, 28 лет',
-    before: 'Работа в банке 5/2, зарплата упиралась в потолок. Кредиты, отсутствие свободного времени.',
-    after: 'Первый заказ на Upwork ($300). Уволился через 2 месяца после курса. Теперь работает удаленно с Бали.',
-    result: '$300 (Заказ)',
-    image: 'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
+    name: 'Дмитрий К.',
+    role: 'Бывший таксист, 29 лет',
+    before: 'Работал по 12 часов за рулем, спина болела, денег не хватало.',
+    after: 'Создает чат-ботов для доставок. Работает из дома 4 часа в день.',
+    result: '350,000 ₸',
+    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
+  },
+  {
+    name: 'Сауле М.',
+    role: 'Мама в декрете, 26 лет',
+    before: 'День сурка, хотела развития и своих денег, чтобы не зависеть от мужа.',
+    after: 'Делает сайты на Tilda пока ребенок спит. Своя студия.',
+    result: '220,000 ₸',
+    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
+  },
+  {
+    name: 'Арман Т.',
+    role: 'Официант, 22 года',
+    before: 'Уставал на ногах, низкая зарплата, нет перспектив.',
+    after: 'Вышел на Upwork, первый заказ из США на $200 за логотип.',
+    result: '$450 USD',
+    image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
   },
   {
     name: 'Елена В.',
-    role: 'Мама в декрете',
-    before: 'Нехватка денег, депрессия от "дня сурка". Хотела помочь мужу, но не знала как.',
-    after: 'Запустила студию дизайна сайтов. Работает 3-4 часа в день, пока ребенок спит. Доход превысил зарплату мужа.',
-    result: 'Свой бизнес',
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
+    role: 'Администратор, 30 лет',
+    before: 'Скучная работа в офисе, отчеты, график с 9 до 18.',
+    after: 'Уволилась через 2 месяца. Ведет 3 магазина на Kaspi как менеджер.',
+    result: '400,000 ₸',
+    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
+  },
+  {
+    name: 'Кайрат Ж.',
+    role: 'Безработный, 24 года',
+    before: 'Долго искал работу по специальности юриста, везде требовали опыт.',
+    after: 'Научился верстать сайты. Сейчас Junior Frontend в студии.',
+    result: 'ЗП 250к+',
+    image: 'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
+  },
+  {
+    name: 'Алина Р.',
+    role: 'Студентка, 19 лет',
+    before: 'Боялась, что IT это сложно и только для математиков.',
+    after: 'Использует AI (ChatGPT) для написания кода. Делает простые игры.',
+    result: '120,000 ₸',
+    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
+  },
+  {
+    name: 'Тимур Б.',
+    role: 'Продавец-консультант',
+    before: 'Работа на ногах, штрафы, нервные клиенты.',
+    after: 'Настраивает таргетированную рекламу и делает креативы.',
+    result: '300,000 ₸',
+    image: 'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
+  },
+  {
+    name: 'Гульназ О.',
+    role: 'Учитель английского',
+    before: 'Много бумажной работы, маленькая зарплата в школе.',
+    after: 'Переводит сайты и делает контент для зарубежных блогов.',
+    result: 'Доп. $400',
+    image: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
+  },
+  {
+    name: 'Олег П.',
+    role: 'Охранник, 35 лет',
+    before: 'Ночные смены, скука, хотел поменять жизнь.',
+    after: 'Освоил Figma. Рисует баннеры для Youtube каналов.',
+    result: '150,000 ₸',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
   }
 ];
 
 const Testimonials: React.FC = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
   return (
-    <section id="testimonials" className="py-20 md:py-32 bg-gray-900">
+    <section id="testimonials" className="py-20 md:py-32 bg-gray-900 overflow-hidden">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16 animate-fade-in-up">
+        <div className="text-center mb-12 animate-fade-in-up">
           <h2 className="text-3xl md:text-4xl font-extrabold text-white">Было / Стало</h2>
-          <p className="mt-4 text-lg text-gray-400">Реальные истории трансформации наших студентов.</p>
+          <p className="mt-4 text-lg text-gray-400">Реальные истории наших студентов. Листайте вправо ➔</p>
           <div className="mt-4 w-24 h-1 bg-indigo-500 mx-auto rounded-full"></div>
         </div>
-        <div className="grid md:grid-cols-3 gap-8">
+
+        {/* Horizontal Scroll Container */}
+        <div 
+            ref={scrollRef}
+            className="flex overflow-x-auto gap-6 pb-8 px-4 md:px-0 scrollbar-hide snap-x snap-mandatory -mx-6 md:mx-0"
+            style={{ scrollBehavior: 'smooth' }}
+        >
           {testimonials.map((t, i) => (
-            <div key={i} className="bg-gray-800 rounded-2xl shadow-xl border border-gray-700 hover:border-indigo-500 transition-all duration-300 flex flex-col h-full animate-fade-in-up" style={{ animationDelay: `${i * 0.1}s` }}>
-              <div className="p-8 pb-0 flex-grow">
+            <div 
+                key={i} 
+                className="flex-none w-80 md:w-96 snap-center bg-gray-800 rounded-2xl shadow-xl border border-gray-700 hover:border-indigo-500 transition-all duration-300 flex flex-col h-auto"
+            >
+              <div className="p-6 md:p-8 flex-grow flex flex-col">
                   <div className="flex items-center justify-between mb-6">
                       <div className="flex items-center">
                         <img className="w-12 h-12 rounded-full mr-3 border-2 border-indigo-500 object-cover" src={t.image} alt={t.name} />
                         <div>
-                        <h4 className="text-white font-bold text-sm">{t.name}</h4>
-                        <p className="text-gray-500 text-xs uppercase tracking-wide">{t.role}</p>
+                            <h4 className="text-white font-bold text-sm">{t.name}</h4>
+                            <p className="text-gray-500 text-xs uppercase tracking-wide truncate max-w-[120px]">{t.role}</p>
                         </div>
                       </div>
                       <div className="flex text-yellow-400">
@@ -56,24 +123,33 @@ const Testimonials: React.FC = () => {
                       </div>
                   </div>
                   
-                  <div className="space-y-4 mb-6">
+                  <div className="space-y-4 mb-6 flex-grow">
                     <div className="relative pl-4 border-l-2 border-red-500/50">
-                        <p className="text-xs text-red-400 font-bold uppercase mb-1">До курса:</p>
+                        <p className="text-xs text-red-400 font-bold uppercase mb-1">До:</p>
                         <p className="text-gray-400 text-sm leading-relaxed italic">"{t.before}"</p>
                     </div>
                     <div className="relative pl-4 border-l-2 border-green-500">
-                        <p className="text-xs text-green-400 font-bold uppercase mb-1">После курса:</p>
+                        <p className="text-xs text-green-400 font-bold uppercase mb-1">После:</p>
                         <p className="text-white text-sm leading-relaxed">"{t.after}"</p>
                     </div>
                   </div>
 
-                  <div className="bg-gray-900/50 rounded-lg p-4 mb-8 border border-gray-700">
-                      <p className="text-xs text-gray-400 uppercase text-center mb-1">Главный результат</p>
+                  <div className="mt-auto bg-gray-900/50 rounded-lg p-4 border border-gray-700 relative overflow-hidden group-hover:border-indigo-500/50 transition-colors">
+                      <p className="text-xs text-gray-400 uppercase text-center mb-1">Результат</p>
                       <p className="text-indigo-400 font-bold text-2xl text-center">{t.result}</p>
                   </div>
               </div>
             </div>
           ))}
+           {/* CTA Card at the end of scroll */}
+           <div className="flex-none w-80 md:w-96 snap-center bg-indigo-900/20 rounded-2xl border-2 border-dashed border-indigo-500/50 flex flex-col items-center justify-center p-8 text-center hover:bg-indigo-900/40 transition-colors cursor-pointer group">
+              <div className="w-16 h-16 bg-indigo-600 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path></svg>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">Ваша история здесь</h3>
+              <p className="text-gray-400 mb-6">Пройдите курс и станьте следующим кейсом успеха.</p>
+              <a href="#enroll" className="text-indigo-400 font-bold hover:text-white transition-colors">Записаться →</a>
+           </div>
         </div>
       </div>
     </section>
