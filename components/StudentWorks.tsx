@@ -85,24 +85,65 @@ const projects = [
 ];
 
 const StudentWorks: React.FC = () => {
-  const scrollTo = (selector: string) => {
-    const element = document.querySelector(selector);
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollRef.current) {
+      const { current } = scrollRef;
+      const scrollAmount = 320; // Width of card + gap
+      if (direction === 'left') {
+        current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      } else {
+        current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      }
+    }
+  };
+
+  const handleWheel = (e: React.WheelEvent) => {
+    if (scrollRef.current) {
+       // Convert vertical scroll to horizontal
+       if (e.deltaY !== 0) {
+           scrollRef.current.scrollLeft += e.deltaY;
+       }
+    }
+  };
+
+  const scrollToEnroll = () => {
+    const element = document.getElementById('enroll');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
   return (
-    <section id="works" className="py-20 md:py-32 bg-gray-900 overflow-hidden">
-      <div className="container mx-auto px-6">
+    <section id="works" className="py-20 md:py-32 bg-gray-900 overflow-hidden group">
+      <div className="container mx-auto px-6 relative">
         <div className="text-center mb-12 animate-fade-in-up">
           <h2 className="text-3xl md:text-4xl font-extrabold text-white">10+ Примеров Работ</h2>
           <p className="mt-4 text-lg text-gray-400">Листайте, чтобы увидеть, за что платят студентам ➔</p>
           <div className="mt-4 w-24 h-1 bg-indigo-500 mx-auto rounded-full"></div>
         </div>
 
+        {/* Navigation Buttons */}
+        <button 
+            onClick={() => scroll('left')}
+            className="absolute left-0 md:left-4 top-1/2 transform -translate-y-1/2 z-10 bg-gray-800/80 hover:bg-indigo-600 text-white p-3 rounded-full shadow-lg backdrop-blur-sm border border-gray-600 transition-all hidden md:block"
+            aria-label="Scroll left"
+        >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"></path></svg>
+        </button>
+        <button 
+            onClick={() => scroll('right')}
+            className="absolute right-0 md:right-4 top-1/2 transform -translate-y-1/2 z-10 bg-gray-800/80 hover:bg-indigo-600 text-white p-3 rounded-full shadow-lg backdrop-blur-sm border border-gray-600 transition-all hidden md:block"
+            aria-label="Scroll right"
+        >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
+        </button>
+
         {/* Horizontal Scroll Container */}
         <div 
+            ref={scrollRef}
+            onWheel={handleWheel}
             className="flex overflow-x-auto gap-6 pb-8 px-4 md:px-0 scrollbar-hide snap-x snap-mandatory -mx-6 md:mx-0"
             style={{ scrollBehavior: 'smooth' }}
         >
@@ -139,7 +180,7 @@ const StudentWorks: React.FC = () => {
         </div>
 
         <div className="text-center mt-8 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-            <button onClick={() => scrollTo('#enroll')} className="bg-transparent border-2 border-indigo-500 text-indigo-400 hover:bg-indigo-600 hover:text-white font-bold py-3 px-8 rounded-lg transition-all duration-300">
+            <button onClick={scrollToEnroll} className="bg-transparent border-2 border-indigo-500 text-indigo-400 hover:bg-indigo-600 hover:text-white font-bold py-3 px-8 rounded-lg transition-all duration-300">
                 Хочу такое же портфолио
             </button>
         </div>
